@@ -1,4 +1,6 @@
 import { useState } from "react"
+import Button from '@mui/material/Button'
+import { RestartAlt } from "@mui/icons-material";
 
 function Tictac() {
 
@@ -9,7 +11,6 @@ function Tictac() {
     function handleClick(index) {
         if (squares[index] === null) {
             const updatedSquares = [...squares];
-            console.log(updatedSquares);
             updatedSquares[index] = turn;
             setSquares(updatedSquares);
 
@@ -71,8 +72,10 @@ function Tictac() {
                     <button className="tiles" onClick={() => handleClick(6)}>{squares[6]}</button>
                     <button className="tiles" onClick={() => handleClick(7)}>{squares[7]}</button>
                     <button className="tiles" onClick={() => handleClick(8)}>{squares[8]}</button>
-                </div>  
-                <button className="reset mt-3" onClick={reset}>Reset</button>
+                </div>
+                <Button variant="contained" startIcon={<RestartAlt/>} size="large" color="error" className="reset mt-3" onClick={reset}>
+                  Reset
+                </Button>
             </div>
         </div>
     )
