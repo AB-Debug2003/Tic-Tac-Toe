@@ -1,6 +1,5 @@
 import './App.css'
 import Tictac from './Tictac'
-
 function App() {
 
   return (
